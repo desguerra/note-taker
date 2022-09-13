@@ -31,6 +31,8 @@ router.delete('/notes/:id', (req, res) => {
     console.log(`DELETE Request Called for /api/notes/${req.params.id} endpoint`);
 
     deleteNote(req.params.id, notes);
+
+    res.send(`DELETE Request Called for /api/notes/${req.params.id} endpoint`);
 });
 
 module.exports = router;
