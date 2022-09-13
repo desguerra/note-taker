@@ -3,7 +3,7 @@ const express = require('express');
 const PORT = process.env.PORT || 3001;
 const app = express();
 // REQUIRE ROUTES
-//const apiRoutes = require('./routes/apiRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
 // parse incoming string or array data for POST
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // USE ROUTES HERE
-//app.use('/api', apiRoutes);
+app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 app.listen(PORT, () => {
